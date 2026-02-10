@@ -1,0 +1,29 @@
+# Project
+PROJECT_NAME           = "My Project"
+OUTPUT_DIRECTORY       = docs
+
+# Input
+INPUT                  = main.cpp
+RECURSIVE              = NO
+FILE_PATTERNS          = *.cpp
+
+# Extraction
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Preprocessing (important for C++)
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+
+# HTML output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+# Disable everything else
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+GENERATE_DOCBOOK       = NO
