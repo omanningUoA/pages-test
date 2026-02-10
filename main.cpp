@@ -13,6 +13,10 @@ uvec school_sum(uvec D1, uvec D2, uint B);
 uvec karatsuba_product(uvec D1, uvec D2, uint B);
 uvec int_quotient(uvec D1, uvec D2, uint B);
 
+/**
+ * @brief main function
+ * Read in two numbers and a base, then calculate the sum and product using the bwlow algorithms
+ */
 int main(int argc, char* argv[]) {
     // Inputs
     string I1, I2; uint B;
