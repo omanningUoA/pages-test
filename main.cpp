@@ -39,6 +39,11 @@ int main(int argc, char* argv[]) {
               << quotient << std::endl;
 }
 
+/**
+ * @brief converts string to unsigned integer vector
+ * @param I A number parsed as a string
+ * @return An unsigned integer list 
+ */
 uvec string_to_uvec(string I) {
     uvec D;
     // Push integers in reverse order
@@ -47,6 +52,11 @@ uvec string_to_uvec(string I) {
     return D;
 }
 
+/**
+ * @brief converts string to unsigned integer vector
+ * @param D An unsigned integer list
+ * @return A number parsed as a string
+ */
 string uvec_to_string(uvec D) {
     string I;
     // Remove trailing zeros
@@ -58,6 +68,13 @@ string uvec_to_string(uvec D) {
     return I;
 }
 
+/**
+ * @brief resizes two unsigned integer lists to the same length
+ * @param D1 first digits list
+ * @param D2 second digits list
+ * @param extra any extra digits to add
+ * @return the resized length of the vectors
+ */
 size_t resize_uvecs(uvec &D1, uvec &D2, uint extra = 0) {
     // Calculate new size
     size_t size = std::max(D1.size(), D2.size()) + extra;
@@ -71,6 +88,12 @@ size_t resize_uvecs(uvec &D1, uvec &D2, uint extra = 0) {
     return size;
 }
 
+/**
+ * @brief performs a scalar multiplication on vector D by integer i
+ * @param D an unsigned digit vector
+ * @param i the scalar multiplier
+ * @return a scaled vector
+ */
 uvec scalar_multiply(uvec D, int i) { 
     uvec D1 = D;
     // Scalar multiply each element
@@ -79,6 +102,12 @@ uvec scalar_multiply(uvec D, int i) {
     return D;
 }
 
+/**
+ * @brief performs a shift of an integer bector by k
+ * @param D an unsigned digit vector
+ * @param k the number of digits to add
+ * @return a scaled vector
+ */
 uvec shift_uvec(uvec D, uint k) {
     // Init vector of k zeros and append D
     uvec D1(k,0);
@@ -86,6 +115,13 @@ uvec shift_uvec(uvec D, uint k) {
     return D1;
 }
 
+/**
+ * @brief performs school sum algorithm on two digit vectors of base B
+ * @param D1 first digits list
+ * @param D2 second digits list
+ * @param B the base of the digits
+ * @return the sum result
+ */
 uvec school_sum(uvec D1, uvec D2, uint B) {
     // Make D1 and D2 of equal length
     uint n = resize_uvecs(D1, D2, 1);
@@ -101,6 +137,13 @@ uvec school_sum(uvec D1, uvec D2, uint B) {
     return S;
 }
 
+/**
+ * @brief performs school subtraction algorithm on two digit vectors of base B
+ * @param D1 first digits list
+ * @param D2 second digits list
+ * @param B the base of the digits
+ * @return the different result
+ */
 uvec school_sub(uvec D1, uvec D2, uint B) {
     // Make D1 and D2 of equal length
     uint n = resize_uvecs(D1, D2, 1);
@@ -120,6 +163,13 @@ uvec school_sub(uvec D1, uvec D2, uint B) {
     return D;
 }
 
+/**
+ * @brief performs multiplication algorithm on two digit vectors of base B
+ * @param D1 first digits list
+ * @param D2 second digits list
+ * @param B the base of the digits
+ * @return the multiplication result
+ */
 uvec karatsuba_product(uvec D1, uvec D2, uint B) {
     // resize vectors to same length
     uint n = resize_uvecs(D1, D2);
